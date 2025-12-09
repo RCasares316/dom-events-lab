@@ -24,8 +24,8 @@ buttons.forEach((button) => {
       handleOperatorClick(buttonText);
     } else if (buttonText === "C") {
       clearCalculator();
-    } else if (buttonText === "="){
-        handleEqualClick()
+    } else if (buttonText === "=") {
+      handleEqualClick();
     }
     // Do something with this operator
   });
@@ -53,14 +53,6 @@ function handleOperatorClick(operatorText) {
   if (firstNumber === "") {
     return;
   }
-  //   if (currentOperator !== null
-  //  && secondNumber !== ""
-  // ) {
-  // const result = calculate(firstNumber, secondNumber, currentOperator);
-  // firstNumber = String(result);
-  // secondNumber = "";
-  // updateDisplay(firstNumber);
-  //   }
   currentOperator = operatorText;
 }
 function handleEqualClick() {
