@@ -8,13 +8,10 @@ buttons.forEach((button) => {
   button.addEventListener("click", (event) => {
     const clickedButton = event.target;
     const buttonText = clickedButton.innerText;
-    // This log is for testing purposes to verify we're getting the correct value
     if (event.target.classList.contains("number")) {
-      // Do something with a number
       handleNumberClick(buttonText);
-    }
+ }
 
-    // Example
     if (
       buttonText === "+" ||
       buttonText === "*" ||
@@ -27,7 +24,6 @@ buttons.forEach((button) => {
     } else if (buttonText === "=") {
       handleEqualClick();
     }
-    // Do something with this operator
   });
 });
 
@@ -41,11 +37,11 @@ function clearCalculator() {
   updateDisplay("0");
 }
 function handleNumberClick(numberText) {
-  if (!firstNumber) {
-    firstNumber = numberText;
+  if (!currentOperator) {
+    firstNumber = firstNumber + numberText;
     updateDisplay(firstNumber);
   } else {
-    secondNumber = numberText;
+    secondNumber = secondNumber + numberText;
     updateDisplay(secondNumber);
   }
 }
